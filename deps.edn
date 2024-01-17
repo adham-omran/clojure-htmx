@@ -1,0 +1,17 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        hiccup/hiccup {:mvn/version "2.0.0-RC2"}
+        metosin/reitit {:mvn/version "0.7.0-alpha7"}
+        ring/ring {:mvn/version "1.11.0-RC1"}}
+ :aliases
+ {:run-m {:main-opts ["-m" "personal.htmx"]}
+  :run-x {:ns-default personal.htmx
+          :exec-fn greet
+          :exec-args {:name "Clojure"}}
+  :build {:deps {io.github.clojure/tools.build
+                 {:mvn/version "0.9.6"}}
+          :ns-default build}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
+                      io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}}}}
