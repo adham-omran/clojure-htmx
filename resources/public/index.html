@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="./css/output.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- <script src="index.js"></script> -->
+    <!-- <script src="https://unpkg.com/htmx.org@1.9.10"></script> -->
+    <script src="./htmx.min.js"></script>
+    <h1 class="text-2xl font-bold underline">
+      Hello there
+    </h1>
+    <button hx-post="/api/ping" hx-swap="outerHTML">
+      Click Me Now!
+    </button>
+    <br>
+    <input type="text"
+           name="q"
+           hx-trigger="keyup changed delay:500ms"
+           hx-get="/trigger"
+           hx-target="#results"
+           placeholder="Search...">
+
+    <div id="results"></div>
+  </body>
+</html>
